@@ -1,0 +1,17 @@
+{
+  "common": {
+    "progress": "please wait a moment"
+  },
+  "footer": {
+    "content": "Footer Area"
+  },
+  "header": {
+    "content": "Header Area"
+  },
+  "home": {
+    "content": "Main Page"
+  },
+  "signIn": {
+    "content": "Sign-In Page"
+  }
+}

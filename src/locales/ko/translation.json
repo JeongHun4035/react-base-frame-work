@@ -1,0 +1,17 @@
+{
+  "common": {
+    "progress": "잠시만 기다려주세요."
+  },
+  "footer": {
+    "content": "푸터 영역"
+  },
+  "header": {
+    "content": "헤더 영역"
+  },
+  "home": {
+    "content": "메인 페이지"
+  },
+  "signIn": {
+    "content": "로그인 페이지"
+  }
+}
