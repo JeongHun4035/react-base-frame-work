@@ -11,7 +11,7 @@ const CalendarEx = () => {
   // 띄어쓰면 갭이 생기고, 콤마가 있으면 그룹으로 묶는 형태 header 와 footer 동일
   const headerToolOptions: IHeaderToolBar = {
     left: "title",
-    right: "prev next dayGridMonth,timeGridWeek,timeGridDay", // 선택 가능 ex)dayGridMonth 만 표시도 가능
+    right: "dayGridMonth,timeGridWeek,timeGridDay prev next", // 선택 가능 ex)dayGridMonth 만 표시도 가능
   };
   const footerToolOptions: IFooterToolBar = {
     right: "today",
