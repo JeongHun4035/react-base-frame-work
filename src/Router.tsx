@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SignIn from "@/pages/SignIn";
 import Home from "@/pages/Home";
+import DemoList from "@/demo/DemoList";
 import CalendarEx from "@/demo/CalendarEx";
 
 const Router = () => {
@@ -12,6 +13,10 @@ const Router = () => {
     {
       path: "/sign-in",
       element: <SignIn />,
+    },
+    {
+      path: "/demo-list",
+      element: <DemoList />,
     },
     {
       path: "/full-calendar",

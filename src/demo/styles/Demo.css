@@ -1,0 +1,14 @@
+.demo-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.demo-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.demo-view {
+}

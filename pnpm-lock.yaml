@@ -16,12 +16,21 @@ dependencies:
     version: 6.23.1(react-dom@18.3.1)(react@18.3.1)
 
 devDependencies:
+  '@fullcalendar/core':
+    specifier: ^6.1.14
+    version: 6.1.14
   '@fullcalendar/daygrid':
+    specifier: ^6.1.14
+    version: 6.1.14(@fullcalendar/core@6.1.14)
+  '@fullcalendar/interaction':
     specifier: ^6.1.14
     version: 6.1.14(@fullcalendar/core@6.1.14)
   '@fullcalendar/react':
     specifier: ^6.1.14
     version: 6.1.14(@fullcalendar/core@6.1.14)(react-dom@18.3.1)(react@18.3.1)
+  '@fullcalendar/timegrid':
+    specifier: ^6.1.14
+    version: 6.1.14(@fullcalendar/core@6.1.14)
   '@rushstack/eslint-config':
     specifier: ^3.7.0
     version: 3.7.0(eslint@9.4.0)(typescript@5.4.5)
@@ -595,6 +604,14 @@ packages:
       '@fullcalendar/core': 6.1.14
     dev: true
 
+  /@fullcalendar/interaction@6.1.14(@fullcalendar/core@6.1.14):
+    resolution: {integrity: sha512-rXum5XCjq+WEPNctFeYL/JKZGeU2rlxrElygocdMegcrIBJQW5hnWWVE+i4/1dOmUKF80CbGVlXUyYXoqK2eFg==}
+    peerDependencies:
+      '@fullcalendar/core': ~6.1.14
+    dependencies:
+      '@fullcalendar/core': 6.1.14
+    dev: true
+
   /@fullcalendar/react@6.1.14(@fullcalendar/core@6.1.14)(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-sXLn2D8aPYLuDH3fy2ZhHTOz5WNSU1NhoECsGBzjUtz2IYHy6m5Y9TqlyqeAqVqFLDRSJAlKAr5LyrIvnD/IMA==}
     peerDependencies:
@@ -605,6 +622,15 @@ packages:
       '@fullcalendar/core': 6.1.14
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
+    dev: true
+
+  /@fullcalendar/timegrid@6.1.14(@fullcalendar/core@6.1.14):
+    resolution: {integrity: sha512-ZByc3BVAtxWSVfyaNedROLlg/Tb2NQ43+MZZAfBSrVwVm2xyfQ+Bsx3pJyCXsRsUh2TFFTO07q7nMWe0jet3KQ==}
+    peerDependencies:
+      '@fullcalendar/core': ~6.1.14
+    dependencies:
+      '@fullcalendar/core': 6.1.14
+      '@fullcalendar/daygrid': 6.1.14(@fullcalendar/core@6.1.14)
     dev: true
 
   /@humanwhocodes/module-importer@1.0.1:

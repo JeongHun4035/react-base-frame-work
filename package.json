@@ -15,8 +15,11 @@
     "react-router-dom": "^6.23.1"
   },
   "devDependencies": {
+    "@fullcalendar/core": "^6.1.14",
     "@fullcalendar/daygrid": "^6.1.14",
+    "@fullcalendar/interaction": "^6.1.14",
     "@fullcalendar/react": "^6.1.14",
+    "@fullcalendar/timegrid": "^6.1.14",
     "@rushstack/eslint-config": "^3.7.0",
     "@types/node": "^20.14.2",
     "@types/react": "^18.2.66",
