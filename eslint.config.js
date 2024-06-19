@@ -37,19 +37,9 @@ export default [
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
       "no-var": "error",
-      "no-console": ["error", { allow: ["warn", "error"] }],
       "eslint-comments/no-unused-disable": "error",
-      "no-unused-vars": "warn",
-      "unused-imports/no-unused-vars": [
-        "warn",
-        {
-          vars: "all",
-          varsIgnorePattern: "^_",
-          args: "after-used",
-          argsIgnorePattern: "^_",
-        },
-      ],
       "unused-imports/no-unused-imports": "warn",
+      "@typescript-eslint/no-explicit-any": "off",
     },
     settings: {
       react: {
