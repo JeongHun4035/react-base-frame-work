@@ -2,25 +2,20 @@ import { useEffect, useRef } from "react";
 import { Calendar } from "@fullcalendar/core";
 import { ICalendarProps } from "@/components/types/fullCalendar";
 import koLocale from "@fullcalendar/core/locales/ko";
+import dayGridPlugin from "@fullcalendar/daygrid"; // 월간 // day 그리드 플러그인
+import timeGridPlugin from "@fullcalendar/timegrid"; // 주간, 일간 // time 그리드 플러그인
+import interactionPlugin from "@fullcalendar/interaction"; // 이벤트 플러그인
 
 import "@/components/styles/FullCanlendar.css";
 
 const CustomFullCalendar = ({
-  plugins = [],
+  plugins = [dayGridPlugin, timeGridPlugin, interactionPlugin],
   height = "850px",
   defaultMode = "dayGridMonth", //default = dayGridMonth 그 외 timeGridWeek,timeGridDay 선택가능
   headerToolbar = {},
   footerToolbar = {},
-  buttonText = {
-    prev: "<",
-    next: ">",
-    prevYear: "<<",
-    nextYear: ">>",
-    today: "today",
-    month: "month",
-    week: "week",
-    day: "day",
-  },
+  customButtons = {},
+  buttonText = {},
   // About Event Props
   eventBackgroundColor = "", // 이벤트 배경색
   eventBorderColor = "", // 이벤트 보더색
@@ -58,11 +53,7 @@ const CustomFullCalendar = ({
   },
 }: ICalendarProps) => {
   const calendarRef = useRef<HTMLDivElement | null>(null);
-  // const plugins: PluginDef[] = [
-  //   dayGridPlugin,
-  //   timeGridPlugin,
-  //   interactionPlugin,
-  // ];
+
   useEffect(() => {
     const calendarEl = calendarRef.current;
     const calendar = new Calendar(calendarEl as HTMLElement, {
@@ -71,14 +62,8 @@ const CustomFullCalendar = ({
       height: height,
       initialView: defaultMode,
       headerToolbar: headerToolbar,
-      customButtons: {
-        myCustomButton: {
-          text: "custom!",
-          click: function () {
-            alert("clicked the custom button!");
-          },
-        },
-      },
+      footerToolbar: footerToolbar,
+      customButtons: customButtons,
       buttonText: buttonText,
       eventBackgroundColor: eventBackgroundColor,
       eventBorderColor: eventBorderColor,
@@ -93,13 +78,14 @@ const CustomFullCalendar = ({
       eventsSet: changeDetect,
       select: useSelect,
       eventAdd: useAdd,
-      eventDrop: useDrop,
       eventRemove: useRemove,
+      eventDrop: useDrop,
       eventClick: useClick,
       eventMouseEnter: useMouseHover,
       eventMouseLeave: useMouseLeave,
     });
     calendar.render();
+    // useEffect 특성상 return 영역 먼저 실행
     return () => {
       calendar.destroy();
     };

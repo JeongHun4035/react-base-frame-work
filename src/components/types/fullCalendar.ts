@@ -30,6 +30,14 @@ export interface ISchedule {
   borderColor?: string;
 }
 
+interface CustomButtonInput {
+  text: string;
+  click: () => void;
+}
+export interface ICustomButton {
+  [name: string]: CustomButtonInput;
+}
+
 export interface ICalendarProps {
   plugins: PluginDef[];
   height?: string;
@@ -39,12 +47,12 @@ export interface ICalendarProps {
   useInteraction?: boolean;
   headerToolbar?: IHeaderToolBar;
   footerToolbar?: IFooterToolBar;
-  customButton?: object;
   buttonText?: ButtonTextCompoundInput;
   eventBackgroundColor?: string;
   eventBorderColor?: string;
   eventDuplicateColor?: string;
   eventSchedule?: ISchedule[];
+  customButtons?: ICustomButton;
   editable?: boolean;
   selectable?: boolean;
   selectMirror?: boolean;

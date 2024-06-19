@@ -8,16 +8,16 @@
 
   --fc-button-text-color: #fff;
 
-  --fc-button-bg-color: #f3af00;
-  --fc-button-border-color: #f3af00;
+  --fc-button-bg-color: #3788d8;
+  --fc-button-border-color: #3788d8;
 
   --fc-button-hover-bg-color: #f8cf66;
   --fc-button-hover-border-color: #f8cf66;
 
-  --fc-button-active-bg-color: #f8cf66;
-  --fc-button-active-border-color: #f8cf66;
+  --fc-button-active-bg-color: #196aba;
+  --fc-button-active-border-color: #196aba;
 
-  --fc-event-bg-color: #3788d8;
+  --fc-event-bg-color: #feb9c6;
   --fc-event-border-color: #3788d8;
   --fc-event-text-color: #fff;
   --fc-event-selected-overlay-color: rgba(0, 0, 0, 0.25);
@@ -106,4 +106,16 @@
 
 .fc-event-main-frame {
   border-radius: 20px;
+}
+
+.fc-col-header-cell {
+  background-color: #3788d8; /* 배경색을 파란색으로 설정 */
+  color: white; /* 글씨색을 흰색으로 설정 */
+  text-align: center; /* 글씨를 중앙 정렬 */
+  padding: 10px; /* 여백 추가 */
+}
+
+.fc-header-toolbar.fc-toolbar.fc-toolbar-ltr > div:nth-child(2) {
+  display: flex;
+  gap: 20px;
 }
