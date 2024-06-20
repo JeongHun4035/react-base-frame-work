@@ -16,6 +16,7 @@ const CustomFullCalendar = ({
   footerToolbar = {},
   customButtons = {},
   buttonText = {},
+  multiMonthMaxColumns = 2, //
   // About Event Props
   eventBackgroundColor = "", // 이벤트 배경색
   eventBorderColor = "", // 이벤트 보더색
@@ -51,6 +52,9 @@ const CustomFullCalendar = ({
   useMouseLeave = () => {
     console.log("leave");
   },
+  useDateClick = () => {
+    console.log("oops");
+  },
 }: ICalendarProps) => {
   const calendarRef = useRef<HTMLDivElement | null>(null);
 
@@ -63,6 +67,7 @@ const CustomFullCalendar = ({
       initialView: defaultMode,
       headerToolbar: headerToolbar,
       footerToolbar: footerToolbar,
+      multiMonthMaxColumns: multiMonthMaxColumns,
       customButtons: customButtons,
       buttonText: buttonText,
       eventBackgroundColor: eventBackgroundColor,
@@ -83,6 +88,7 @@ const CustomFullCalendar = ({
       eventClick: useClick,
       eventMouseEnter: useMouseHover,
       eventMouseLeave: useMouseLeave,
+      dateClick: useDateClick,
     });
     calendar.render();
     // useEffect 특성상 return 영역 먼저 실행
@@ -113,6 +119,7 @@ const CustomFullCalendar = ({
     useClick,
     useMouseHover,
     useMouseLeave,
+    useDateClick,
   ]);
 
   return <div ref={calendarRef} />;

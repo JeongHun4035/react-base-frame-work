@@ -109,13 +109,21 @@
 }
 
 .fc-col-header-cell {
-  background-color: #3788d8; /* 배경색을 파란색으로 설정 */
-  color: white; /* 글씨색을 흰색으로 설정 */
-  text-align: center; /* 글씨를 중앙 정렬 */
-  padding: 10px; /* 여백 추가 */
+  background-color: #3788d8 !important;
+  color: white !important;
+  text-align: center;
+  padding: 10px;
 }
 
 .fc-header-toolbar.fc-toolbar.fc-toolbar-ltr > div:nth-child(2) {
   display: flex;
   gap: 20px;
+}
+
+.fc-day-sat {
+  background-color: #e1f5fe;
+}
+
+.fc-day-sun {
+  background-color: #ffebee;
 }

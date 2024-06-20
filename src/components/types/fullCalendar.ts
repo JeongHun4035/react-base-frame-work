@@ -47,6 +47,7 @@ export interface ICalendarProps {
   useInteraction?: boolean;
   headerToolbar?: IHeaderToolBar;
   footerToolbar?: IFooterToolBar;
+  multiMonthMaxColumns?: number;
   buttonText?: ButtonTextCompoundInput;
   eventBackgroundColor?: string;
   eventBorderColor?: string;
@@ -68,4 +69,5 @@ export interface ICalendarProps {
   useClick?: (schedule: EventClickArg) => void;
   useMouseHover?: (info: EventHoveringArg) => void;
   useMouseLeave?: (info: EventHoveringArg) => void;
+  useDateClick?: (info: any) => void;
 }

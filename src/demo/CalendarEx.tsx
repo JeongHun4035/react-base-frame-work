@@ -15,6 +15,7 @@ import {
   EventHoveringArg,
 } from "@fullcalendar/core";
 import { ButtonTextCompoundInput } from "@fullcalendar/core/index.js";
+import multiMonthPlugin from "@fullcalendar/multimonth";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
@@ -28,6 +29,7 @@ const CalendarEx = () => {
     timeGridPlugin,
     interactionPlugin,
     listPlugin,
+    multiMonthPlugin,
   ];
   // 띄어쓰면 갭이 생기고, 콤마가 있으면 그룹으로 묶는 형태 header 와 footer 동일
   const headerToolOptions: IHeaderToolBar = {
@@ -37,7 +39,7 @@ const CalendarEx = () => {
   };
   const footerToolOptions: IFooterToolBar = {
     right:
-      "dayGridYear dayGridMonth dayGridWeek listYear listMonth listWeek listDay",
+      "multiMonthYear listYear,listMonth,listWeek,listDay dayGridYear,dayGridMonth,dayGridWeek timeGridWeek,timeGridDay",
   };
 
   const customButtons: ICustomButton = {
