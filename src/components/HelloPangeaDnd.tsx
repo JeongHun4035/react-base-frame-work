@@ -1,63 +1,37 @@
-import React from "react";
 import {
   DragDropContext,
   Droppable,
   Draggable,
-  DragStart,
-  DragUpdate,
   DropResult,
 } from "@hello-pangea/dnd";
-import "@/demo/styles/HelloPangeaDnd.css";
-
-interface HelloPangeaDndProps {
-  children: React.ReactNode | React.ReactNode[];
-  dropZoneId: string;
-  dragKey: string;
-  dragId: string;
-  onDragStart?: (result: DragStart) => void;
+import { IDndData } from "@/components/types/HelloPangeaDnd";
+import '@/components/styles/BeautifulDnD.css'
+interface DndProps {
+  droppableId: string;
+  initialItems: IDndData[];
   onDragEnd: (result: DropResult) => void;
-  onDragUpdate?: (result: DragUpdate) => void;
 }
 
-const HelloPangeaDnd: React.FC<HelloPangeaDndProps> = ({
-  children,
-  dropZoneId,
-  dragKey,
-  dragId,
-  onDragStart = () => {
-    console.log("start");
-  },
-  onDragEnd = (result: DropResult) => {
-    if (result.destination) {
-      console.log("Dropped in valid zone", result);
-    } else {
-      console.log("Dropped outside of valid zone", result);
-    }
-  },
-  onDragUpdate = () => {
-    console.log("update");
-  },
-}) => {
-  const childrenArray = React.Children.toArray(children);
+const DragAndDropComponent = ({
+  droppableId,
+  initialItems,
+  onDragEnd,
+}: DndProps) => {
   return (
-    <DragDropContext
-      onDragStart={onDragStart}
-      onDragEnd={onDragEnd}
-      onDragUpdate={onDragUpdate}
-    >
-      <Droppable droppableId={dropZoneId} isDropDisabled={false}>
+    <DragDropContext onDragEnd={onDragEnd}>
+      <Droppable droppableId={droppableId}>
         {(provided) => (
           <div {...provided.droppableProps} ref={provided.innerRef}>
-            {childrenArray.map((child, index) => (
-              <Draggable key={dragKey} draggableId={dragId} index={index}>
+            {initialItems.map((item, index) => (
+              <Draggable key={item.id} draggableId={item.id} index={index}>
                 {(provided) => (
                   <div
+                    className="draggable-item"
                     ref={provided.innerRef}
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}
-                    className="draggable-item"
                   >
-                    {child}
+                    {item.name}
                   </div>
                 )}
               </Draggable>
@@ -70,4 +44,4 @@ const HelloPangeaDnd: React.FC<HelloPangeaDndProps> = ({
   );
 };
 
-export default HelloPangeaDnd;
+export default DragAndDropComponent;

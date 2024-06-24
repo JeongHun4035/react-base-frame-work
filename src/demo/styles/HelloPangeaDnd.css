@@ -1,24 +1,13 @@
 .dnd-wrapper {
   display: flex;
-  flex-direction: row;
   width: 1000px;
   height: 800px;
-  justify-content: space-between;
 }
 
-.left-area {
-  display: flex;
+.dnd-area {
   flex-direction: column;
-  align-items: center;
+  width: 100%;
   border: solid 2px;
-  width: 400px;
-}
-
-.right-area {
-  display: flex;
-  flex-direction: column;
-  border: solid 2px;
-  width: 400px;
 }
 
 .draggable-item {

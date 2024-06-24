@@ -1,116 +1,52 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IDndData } from "@/components/types/HelloPangeaDnd";
+import { DropResult } from "@hello-pangea/dnd";
 import "@/demo/styles/HelloPangeaDnd.css";
-import {
-  DiLinux,
-  DiIe,
-  DiVisualstudio,
-  DiJava,
-  DiFirefox,
-  DiReact,
-} from "react-icons/di";
-import { DragStart, DragUpdate, DropResult } from "@hello-pangea/dnd";
 import HelloPangeaDnd from "@/components/HelloPangeaDnd";
 
 const DragAndDropArea = () => {
-  const [globalData, setGlobalData] = useState<IDndData[]>([
+  const [dndItems, setDndItems] = useState<IDndData[]>([
     {
       id: "ITEM_01",
-      key: "A",
-      name: "Linux",
-      icon: <DiLinux />,
+      name: "A",
     },
     {
       id: "ITEM_02",
-      key: "B",
-      name: "Explore",
-      icon: <DiIe />,
+      name: "B",
     },
     {
       id: "ITEM_03",
-      key: "C",
-      name: "Visual Studio Code",
-      icon: <DiVisualstudio />,
+      name: "C",
     },
     {
       id: "ITEM_04",
-      key: "D",
-      name: "Java",
-      icon: <DiJava />,
+      name: "D",
     },
     {
       id: "ITEM_05",
-      key: "E",
-      name: "Firefox",
-      icon: <DiFirefox />,
-    },
-    {
-      id: "ITEM_06",
-      key: "F",
-      name: "React",
-      icon: <DiReact />,
+      name: "E",
     },
   ]);
-  const [myData, setMyData] = useState<IDndData[]>([]);
-  const dragStartEvent = (result: DragStart) => {
-    console.log("DragStart", result);
-  };
+
   const dragEndEvent = (result: DropResult) => {
-    if (result.destination) {
-      console.log("Dropped in valid zone", result);
-    } else {
-      console.log("Dropped outside of valid zone", result);
-    }
+    console.log(result);
+    if (!result.destination) return;
+    const reorderedItems = Array.from(dndItems);
+    const [removed] = reorderedItems.splice(result.source.index, 1);
+    reorderedItems.splice(result.destination.index, 0, removed);
+    setDndItems(reorderedItems);
   };
-  const dragUpdateEvent = (result: DragUpdate) => {
-    console.log("DragUpdate", result);
-  };
+
   return (
     <div className="dnd-wrapper">
-      <div className="left-area">
-        Global
-        {globalData.map(function (data) {
-          return (
-            <HelloPangeaDnd
-              key={data.id}
-              dropZoneId={"global"}
-              onDragStart={dragStartEvent}
-              onDragEnd={dragEndEvent}
-              onDragUpdate={dragUpdateEvent}
-              dragKey={data.key}
-              dragId={data.id}
-            >
-              <div key={data.id}>
-                <span>
-                  {data.icon} {data.name}
-                </span>
-              </div>
-            </HelloPangeaDnd>
-          );
-        })}
-      </div>
-      <div className="right-area">
-        Mine
-        {myData.map(function (data) {
-          return (
-            <HelloPangeaDnd
-              key={data.id}
-              dropZoneId={"mine"}
-              onDragStart={dragStartEvent}
-              onDragEnd={dragEndEvent}
-              onDragUpdate={dragUpdateEvent}
-              dragKey={data.key}
-              dragId={data.id}
-            >
-              <div key={data.id}>
-                <span>
-                  {data.icon} {data.name}
-                </span>
-              </div>
-            </HelloPangeaDnd>
-          );
-        })}
+      <div className="dnd-area">
+        Drag and Drops Area
+        <HelloPangeaDnd
+          droppableId="dndA"
+          initialItems={dndItems}
+          onDragEnd={dragEndEvent}
+        />
       </div>
     </div>
   );
