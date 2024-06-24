@@ -2,8 +2,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SignIn from "@/pages/SignIn";
 import Home from "@/pages/Home";
 import DemoList from "@/demo/DemoList";
-import CalendarEx from "@/demo/CalendarEx";
-
+import CalendarExample from "@/demo/CalendarExample";
+import HelloPangeaDndExample from "@/demo/HelloPangeaDndExample";
 const Router = () => {
   const router = createBrowserRouter([
     {
@@ -20,7 +20,11 @@ const Router = () => {
     },
     {
       path: "/full-calendar",
-      element: <CalendarEx />,
+      element: <CalendarExample />,
+    },
+    {
+      path: "/hello-Pangea-Drag-and-Drops",
+      element: <HelloPangeaDndExample />,
     },
   ]);
 

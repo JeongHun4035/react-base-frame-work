@@ -1,0 +1,4 @@
+.drag-and-drop-wrapper {
+  display: flex;
+  flex-direction: column;
+}

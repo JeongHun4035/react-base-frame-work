@@ -22,7 +22,7 @@ import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
 import { useState } from "react";
 
-const CalendarEx = () => {
+const CalendarExample = () => {
   const navigate = useNavigate();
   const plugins = [
     dayGridPlugin,
@@ -160,4 +160,4 @@ const CalendarEx = () => {
   );
 };
 
-export default CalendarEx;
+export default CalendarExample;
