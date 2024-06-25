@@ -52,15 +52,17 @@ const DragAndDropArea = () => {
   );
 };
 
-const HelloPangeaDndExample = () => {
+const SimpleDnd = () => {
   const navigate = useNavigate();
   return (
     <div>
-      <h2>Let's move!!</h2>
       <DragAndDropArea />
-      <button onClick={() => navigate("/demo-list")}>back</button>
+      <button onClick={() => navigate("/deepening-drag-and-drop")}>
+        Deepening
+      </button>
+      <button onClick={() => navigate("/demo-list")}>Back</button>
     </div>
   );
 };
 
-export default HelloPangeaDndExample;
+export default SimpleDnd;

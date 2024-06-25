@@ -3,7 +3,8 @@ import SignIn from "@/pages/SignIn";
 import Home from "@/pages/Home";
 import DemoList from "@/demo/DemoList";
 import CalendarExample from "@/demo/CalendarExample";
-import HelloPangeaDndExample from "@/demo/HelloPangeaDndExample";
+import SimpleDnd from "@/demo/dragAndDrop/SimpleDnd";
+import DeepeningDnd from "@/demo/dragAndDrop/DeepeningDnd";
 const Router = () => {
   const router = createBrowserRouter([
     {
@@ -23,8 +24,12 @@ const Router = () => {
       element: <CalendarExample />,
     },
     {
-      path: "/hello-Pangea-Drag-and-Drops",
-      element: <HelloPangeaDndExample />,
+      path: "/simple-drag-and-drops",
+      element: <SimpleDnd />,
+    },
+    {
+      path: "/deepening-drag-and-drop",
+      element: <DeepeningDnd />,
     },
   ]);
 

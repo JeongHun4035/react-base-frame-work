@@ -17,7 +17,6 @@ const CustomFullCalendar = ({
   customButtons = {},
   buttonText = {},
   multiMonthMaxColumns = 2, //
-  // About Event Props
   eventBackgroundColor = "", // 이벤트 배경색
   eventBorderColor = "", // 이벤트 보더색
   eventDuplicateColor = "", // 이벤트가 중복되었을때, 우선순위로 나타나는 색상
@@ -61,25 +60,25 @@ const CustomFullCalendar = ({
   useEffect(() => {
     const calendarEl = calendarRef.current;
     const calendar = new Calendar(calendarEl as HTMLElement, {
-      plugins: plugins,
+      plugins,
       locale: koLocale,
-      height: height,
+      height,
       initialView: defaultMode,
-      headerToolbar: headerToolbar,
-      footerToolbar: footerToolbar,
-      multiMonthMaxColumns: multiMonthMaxColumns,
-      customButtons: customButtons,
-      buttonText: buttonText,
-      eventBackgroundColor: eventBackgroundColor,
-      eventBorderColor: eventBorderColor,
+      headerToolbar,
+      footerToolbar,
+      multiMonthMaxColumns,
+      customButtons,
+      buttonText,
+      eventBackgroundColor,
+      eventBorderColor,
       eventColor: eventDuplicateColor,
       events: eventSchedule,
-      editable: editable,
-      selectable: selectable,
-      selectMirror: selectMirror,
-      navLinks: navLinks,
-      weekends: weekends,
-      dayMaxEvents: dayMaxEvents,
+      editable,
+      selectable,
+      selectMirror,
+      navLinks,
+      weekends,
+      dayMaxEvents,
       eventsSet: changeDetect,
       select: useSelect,
       eventAdd: useAdd,
@@ -91,15 +90,18 @@ const CustomFullCalendar = ({
       dateClick: useDateClick,
     });
     calendar.render();
-    // useEffect 특성상 return 영역 먼저 실행
+
     return () => {
       calendar.destroy();
     };
   }, [
+    plugins,
     height,
     defaultMode,
     headerToolbar,
     footerToolbar,
+    multiMonthMaxColumns,
+    customButtons,
     buttonText,
     eventBackgroundColor,
     eventBorderColor,

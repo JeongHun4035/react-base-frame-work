@@ -10,9 +10,7 @@ const DemoList = () => {
       </div>
       <div className="demo-items">
         <span>2. React-Beautiful-Drag-and-Drop</span>
-        <button onClick={() => navigate("/hello-Pangea-Drag-and-Drops")}>
-          view
-        </button>
+        <button onClick={() => navigate("/simple-drag-and-drops")}>view</button>
       </div>
     </div>
   );
