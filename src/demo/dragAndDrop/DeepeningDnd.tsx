@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { IDndData } from "@/components/types/HelloPangeaDnd";
+import { IDndData } from "@/components/types/helloPangeaDnd";
 import { DropResult } from "@hello-pangea/dnd";
 import "@/demo/styles/HelloPangeaDnd.css";
 import HelloPangeaDnd from "@/components/HelloPangeaDnd";

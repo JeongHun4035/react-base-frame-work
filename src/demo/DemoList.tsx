@@ -12,6 +12,10 @@ const DemoList = () => {
         <span>2. React-Beautiful-Drag-and-Drop</span>
         <button onClick={() => navigate("/simple-drag-and-drops")}>view</button>
       </div>
+      <div className="demo-items">
+        <span>3. Modals</span>
+        <button onClick={() => navigate("/modals")}>view</button>
+      </div>
     </div>
   );
 };

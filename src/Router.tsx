@@ -5,6 +5,7 @@ import DemoList from "@/demo/DemoList";
 import CalendarExample from "@/demo/CalendarExample";
 import SimpleDnd from "@/demo/dragAndDrop/SimpleDnd";
 import DeepeningDnd from "@/demo/dragAndDrop/DeepeningDnd";
+import ModalExample from "./demo/ModalExample";
 const Router = () => {
   const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ const Router = () => {
     {
       path: "/deepening-drag-and-drop",
       element: <DeepeningDnd />,
+    },
+    {
+      path: "/modals",
+      element: <ModalExample />,
     },
   ]);
 

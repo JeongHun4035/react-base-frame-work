@@ -4,7 +4,7 @@ import {
   Draggable,
   DropResult,
 } from "@hello-pangea/dnd";
-import { IDndData } from "@/components/types/HelloPangeaDnd";
+import { IDndData } from "@/components/types/helloPangeaDnd";
 import "@/components/styles/BeautifulDnD.css";
 interface DndProps {
   droppableId: string;
