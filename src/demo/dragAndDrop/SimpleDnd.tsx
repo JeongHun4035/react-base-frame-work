@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { IDndData } from "@/components/types/helloPangeaDnd";
 import { DropResult } from "@hello-pangea/dnd";
 import "@/demo/styles/HelloPangeaDnd.css";
-import HelloPangeaDnd from "@/components/HelloPangeaDnd";
+import HelloPangeaDnd from "@/components/dnd/HelloPangeaDnd";
+import Button from "@/components/Button";
 
 const DragAndDropArea = () => {
   const [dndItems, setDndItems] = useState<IDndData[]>([
@@ -57,10 +58,11 @@ const SimpleDnd = () => {
   return (
     <div>
       <DragAndDropArea />
-      <button onClick={() => navigate("/deepening-drag-and-drop")}>
-        Deepening
-      </button>
-      <button onClick={() => navigate("/demo-list")}>Back</button>
+      <Button
+        name="Deepening"
+        onClick={() => navigate("/deepening-drag-and-drop")}
+      />
+      <Button name="List" onClick={() => navigate("/demo-list")} />
     </div>
   );
 };

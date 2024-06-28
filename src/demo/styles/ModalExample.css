@@ -1,0 +1,8 @@
+.modal-example-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-examples {
+  padding: 10px;
+}

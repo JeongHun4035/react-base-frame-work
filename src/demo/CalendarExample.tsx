@@ -21,7 +21,7 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
 import { useState } from "react";
-
+import Button from "@/components/Button";
 const CalendarExample = () => {
   const navigate = useNavigate();
   const plugins = [
@@ -155,7 +155,7 @@ const CalendarExample = () => {
           useMouseLeave={handleLeave}
         />
       </div>
-      <button onClick={() => navigate("/demo-list")}>back</button>
+      <Button name="Back" onClick={() => navigate("/demo-list")} />
     </div>
   );
 };
